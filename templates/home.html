@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %} 
+<div class="w-75 mt-5" style="margin: auto;">
+    <div class="d-flex align-items-center">
+        <p class="" style="width: fit-content;">
+        <img src="{{ url_for('static', filename='images/nigeria.png') }}" class="bg-warning rounded-circle py-2" style="width: 4rem;" alt="">
+        </p>
+        <p class="text-white px-3">
+            <small class="text-muted">Nigerian Naira</small><br>
+            <span class="h3">
+                <del style="text-decoration-style: double;">N</del>
+                200,000</span>
+        </p>
+    </div>
+    <div class="d-flex align-items-center mb-4 mt-2">
+        <div class="badge badge-pill text-white bg-success mx-1"><i class="px-2 py-1 fas fa-square"></i>Spend</div>
+        <div class="badge badge-pill text-white bg-success mx-1"><i class="px-2 py-1 fas fa-dice-d6"></i>Save</div>
+        <div class="dropdown mx-1">
+            <button class="badge badge-pill text-white bg-success" style="border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <i class="py-1 fas fa-share"></i>&nbsp; Send Money
+            </button>
+            <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="{{ url_for('pay') }}">Send to wallet</a>
+              <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="#">Send to bank</a>
+            </div>
+          </div>
+        
+
+          
+    </div>
+    <div class="bg-dark p-3"
+    style="background: url(../static/images/atm-white.png);
+    background-size: 10rem;
+    background-repeat: no-repeat;
+    background-position: right;
+    "
+    >
+        <p class="text-muted">Your NGN accout is all set <br>
+        Your account number is <span class="fw-bold text-warning">086376783</span></p>
+    </div>
+    <hr style="border: 1px solid wheat;" class="mt-5">
+    <div>
+        <p class="text-center lead fw-bold text-muted">Recent transaction histories</p>
+        <p class="text-center h4 text-warning mt-3">NO RECORDS</p>
+    </div>
+</div>
+{% endblock content %}

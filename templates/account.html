@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<div class="mt-5 card bg-dark p-5 col-15 col-xs-10 col-sm-10 col-md-9" style="margin: auto;">
+    <div class="d-flex align-items-center">
+        <div class="d-flex flex-column"><img src="{{ url_for('static', filename='images/user.png') }}" class="" style="width: 7rem;" alt=""></div>
+        <div class="d-flex flex-column px-3">
+            <span class="text-light h4">UZO BIANCA</span>
+            <p>
+                <small class="text-muted">Account Number</small><br>
+                <span class="text-light h5">123456789</span>
+            </p>
+        </div>
+    </div>
+    <div>
+        <a href="" class="bg-secondary text-light text-decoration-none py-1 px-3  lead mt-5 d-flex align-items-center justify-content-between " style="width: 20rm;">
+        <p><i class="fas fa-user-check text-warning"></i>&nbsp;&nbsp;Profile</p>
+        <p><i class="fas fa-angle-right"></i></p>
+        </a>
+    </div>
+
+    <div>
+        <a href="" class="bg-secondary text-light text-decoration-none py-1 px-3 lead mt-1 d-flex align-items-center justify-content-between " style="width: 20rm;">
+        <p><i class="far fa-sticky-note text-warning"></i>&nbsp;&nbsp;Statement Report</p>
+        <p><i class="fas fa-angle-right"></i></p>
+        </a>
+    </div>
+
+    <div>
+        <a href="" class="bg-secondary text-light text-decoration-none py-1 px-3 lead mt-1 d-flex align-items-center justify-content-between " style="width: 20rm;">
+        <p><i class="fab fa-rocketchat text-warning"></i>&nbsp;&nbsp;Chat with us</p>
+        <p><i class="fas fa-angle-right"></i></p>
+        </a>
+    </div>
+
+    <div>
+        <a href="" class="bg-secondary text-light text-decoration-none py-1 px-3  lead mt-1 d-flex align-items-center justify-content-between " style="width: 20rm;">
+        <p><i class="fas fa-pen-square text-warning"></i>&nbsp;&nbsp;Legal</p>
+        <p><i class="fas fa-angle-right"></i></p>
+        </a>
+    </div>
+
+    <div>
+        <a href="" class="bg-secondary text-light text-decoration-none py-1 px-3 lead mt-1 d-flex align-items-center justify-content-between " style="width: 20rm;">
+        <p><i class="far fa-question-circle text-warning"></i>&nbsp;&nbsp;FAQ</p>
+        <p><i class="fas fa-angle-right"></i></p>
+        </a>
+    </div>
+
+    <div>
+        <a href="" class="bg-secondary text-light text-decoration-none py-1 px-3  lead mt-1 d-flex align-items-center justify-content-between " style="width: 20rm;">
+        <p><i class="fab fa-osi text-warning"></i>&nbsp;&nbsp;Invite and earn</p>
+        <p><i class="fas fa-angle-right"></i></p>
+        </a>
+    </div>
+
+    <div>
+        <a href="" class="bg-secondary text-light text-decoration-none py-1 px-3 lead mt-1 d-flex align-items-center justify-content-between " style="width: 20rm;">
+        <p><i class="fas fa-phone-square text-warning"></i>&nbsp;&nbsp;Contact us</p>
+        <p><i class="fas fa-angle-right"></i></p>
+        </a>
+    </div>
+</div>
+
+{% endblock content %}
