@@ -33,7 +33,7 @@
             <small class="text-muted">Nigerian Naira</small><br>
             <span class="h3">
                 <del style="text-decoration-style: double;">N</del>
-                200,000</span>
+                {{ user.account_balance }}</span>
         </p>
     </div>
     <div class="d-flex align-items-center mb-4 mt-2">
@@ -60,7 +60,7 @@
     "
     >
         <p class="text-muted">Your NGN accout is all set <br>
-        Your account number is <span class="fw-bold text-warning">086376783</span></p>
+        Your account number is <span class="fw-bold text-warning">{{ user.account_number }}</span></p>
     </div>
     <hr style="border: 1px solid wheat;" class="mt-5">
     <div>

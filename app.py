@@ -33,7 +33,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     phone_number = db.Column(db.Integer,unique=True, nullable=False)
     account_number = db.Column(db.Integer, unique=True, nullable=False)
-    account_balance = db.Column(db.Integer, default=20000)
+    account_balance = db.Column(db.Integer, default="20,000")
     transacts = db.relationship('Transaction', backref='author', lazy=True)
 
     # Define a representation with two attribute 'username' and 'email'
@@ -80,7 +80,7 @@ def account():
 
 @app.route('/home/')
 def home():
-    return render_template('home.html', date=datetime.utcnow())
+    return render_template('home.html', date=datetime.utcnow(), user=current_user)
 
 
 @app.route('/pay/')
@@ -105,7 +105,7 @@ def login():
             # If the check passed, login the user and flash a message to the user when redirected to the homepage
             login_user(user, remember=True)
             flash('Login Successful', 'success')
-            return redirect(url_for('home', id=user.id))
+            return redirect(url_for('home', id=user.id, user=current_user))
         else:
             # If the check failed, flash a message to the user while still on the same page
             flash('Check your Email / Password', 'danger')
@@ -158,6 +158,14 @@ def register():
             return redirect(url_for('login'))
 
     return render_template('register.html', date=datetime.utcnow(), form=form)
+
+
+@app.route('/logout/')
+@login_required
+def logout():
+    logout_user()
+    flash('You\'ve been logged out successfully', 'success')
+    return redirect(url_for('front_page'))
 
 
 if __name__ == '__main__':

@@ -1,4 +1,28 @@
 {% extends 'base.html' %} {% block content %}
+
+ <!-- Flash messages -->
+ {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %} {% for category, message in messages %}
+  <div
+    class="alert-dismissible fade show mb-4 m-auto small alert alert-{{ category }} mt-3"
+    role="alert"
+    style="height: 3.5rem; transition: 0.6s"
+  >
+  {% if category=='success' %}
+    <p class="small text-center"><i class="fa fas fas fa-check"></i>&nbsp;&nbsp;&nbsp;{{ message }}</p>
+    {% else %}
+    <p class="small text-center"><i class="fa fas fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;{{ message }}</p>
+    {% endif %}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %} {% endif %} {% endwith %}
+
+
 <!-- intro section -->
 <div
   class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between mt-5"
