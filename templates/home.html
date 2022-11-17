@@ -1,6 +1,30 @@
 {% extends 'base.html' %}
 {% block content %} 
 <div class="w-75 mt-5" style="margin: auto;">
+
+     <!-- Flash messages -->
+ {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div
+      class="alert-dismissible fade show mb-4 m-auto small alert alert-{{ category }}"
+      role="alert"
+      style="height: 3.5rem; transition: 0.6s"
+    >
+    {% if category=='success' %}
+      <p class="small text-center"><i class="fa fas fas fa-check"></i>&nbsp;&nbsp;&nbsp;{{ message }}</p>
+      {% else %}
+      <p class="small text-center"><i class="fa fas fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;{{ message }}</p>
+      {% endif %}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+
     <div class="d-flex align-items-center">
         <p class="" style="width: fit-content;">
         <img src="{{ url_for('static', filename='images/nigeria.png') }}" class="bg-warning rounded-circle py-2" style="width: 4rem;" alt="">
