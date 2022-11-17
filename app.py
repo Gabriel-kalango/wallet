@@ -33,7 +33,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     phone_number = db.Column(db.Integer,unique=True, nullable=False)
     account_number = db.Column(db.Integer, unique=True, nullable=False)
-    account_balance = db.Column(db.Integer, default="20,000")
+    account_balance = db.Column(db.Integer, default=20000)
     transacts = db.relationship('Transaction', backref='author', lazy=True)
 
     # Define a representation with two attribute 'username' and 'email'
@@ -79,11 +79,14 @@ def account():
 
 
 @app.route('/home/')
+@login_required
 def home():
-    return render_template('home.html', date=datetime.utcnow(), user=current_user)
+    balance = f'{current_user.account_balance:,}'
+    return render_template('home.html', date=datetime.utcnow(), user=current_user, balance=balance)
 
 
 @app.route('/pay/')
+@login_required
 def pay():
     form = SendMoneyForm()
     return render_template('pay.html', date=datetime.utcnow(), form=form)
@@ -109,7 +112,7 @@ def login():
         else:
             # If the check failed, flash a message to the user while still on the same page
             flash('Check your Email / Password', 'danger')
-            return render_template('login.html', form=form)
+            return redirect(url_for('login'))
     # This for a get request, if u click on the link that leads to the login page, this return statement get called upon
     return render_template('login.html', date=datetime.utcnow(), form=form)
 
@@ -118,7 +121,7 @@ def login():
 def register():
     # If the logged-in user is trying to access the login url, redirects the user to the homepage
     if current_user.is_authenticated:
-        return redirect(url_for('account'))
+        return redirect(url_for('home'))
     # Assign the RegistrationForm created in the form.py file to a variable 'form'
     form = RegistrationForm()
     # If the request is a post request and the form doesn't get validated, redirect the user to that same page
@@ -149,6 +152,13 @@ def register():
             phone_number = str(form.phone_number.data)
             account_number = int(str(phone_number)[1:])
             password_hash = generate_password_hash(form.password.data)
+
+            letters = set(form.password.data)
+            mixed = any(letter.islower() for letter in letters) and any(letter.isupper() for letter in letters) and any(letter.isdigit() for letter in letters)
+            if not mixed:
+                flash('Password should contain atleast an uppercase, lowercase and a number', 'danger')
+                return redirect(url_for('register'))
+
             # variable 'new_user'
             new_user = User(first_name=first_name, last_name=last_name, username=username,phone_number=phone_number, email=email, account_number=account_number, password=password_hash)
             # Add the 'new_user'
