@@ -31,7 +31,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(70), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
-    phone_number = db.Column(db.Integer,unique=True, nullable=False)
+    phone_number = db.Column(db.Integer, unique=True, nullable=False)
     account_number = db.Column(db.Integer, unique=True, nullable=False)
     account_balance = db.Column(db.Integer, default=20000)
     transacts = db.relationship('Transaction', backref='author', lazy=True)
@@ -145,6 +145,15 @@ def register():
                 # Flash this message to the user and redirect the user to that same page
                 flash('User with this email already exist', category='danger')
                 return redirect(url_for('register'))
+
+            # Check if phone number exist
+            existing_phone = User.query.filter_by(email=form.phone_number.data).first()
+            # if the phone number exist
+            if existing_phone:
+                # Flash this message to the user and redirect the user to that same page
+                flash('User with this phone number already exist', category='danger')
+                return redirect(url_for('register'))
+
             first_name = form.first_name.data.lower()
             last_name = form.last_name.data.lower()
             username = form.username.data.lower()
@@ -153,14 +162,15 @@ def register():
             account_number = int(str(phone_number)[1:])
             password_hash = generate_password_hash(form.password.data)
 
+            # to check if the password is the mixture of uppercase, lowercase and a number at least
             letters = set(form.password.data)
             mixed = any(letter.islower() for letter in letters) and any(letter.isupper() for letter in letters) and any(letter.isdigit() for letter in letters)
             if not mixed:
-                flash('Password should contain atleast an uppercase, lowercase and a number', 'danger')
+                flash('Password should contain at least an uppercase, lowercase and a number', 'danger')
                 return redirect(url_for('register'))
 
             # variable 'new_user'
-            new_user = User(first_name=first_name, last_name=last_name, username=username,phone_number=phone_number, email=email, account_number=account_number, password=password_hash)
+            new_user = User(first_name=first_name, last_name=last_name, username=username, phone_number=phone_number, email=email, account_number=account_number, password=password_hash)
             # Add the 'new_user'
             db.session.add(new_user)
             db.session.commit()
