@@ -8,17 +8,18 @@ li.nav-item {
     font-weight: 700;
     position:relative;
 }
-li.nav-item::before{
+li.nav-item._box::before{
     content:"";
     position:absolute;
     height:10%;
     width:0%;
+    border-radius:5px;
     background: #ffc107;
     bottom:0;
     left:0;
     transition:0.3s ease-in-out;
 }
-li.nav-item:hover::before{
+li.nav-item._box:hover::before{
     width:50%;
 }
 a.nav-link.nav-btn{
