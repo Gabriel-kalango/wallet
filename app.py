@@ -85,7 +85,7 @@ def home():
     return render_template('home.html', date=datetime.utcnow(), user=current_user, balance=balance)
 
 
-@app.route('/pay/')
+@app.route('/pay/', methods=['GET', 'POST'])
 @login_required
 def pay():
     form = SendMoneyForm()
