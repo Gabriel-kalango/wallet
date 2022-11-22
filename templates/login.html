@@ -4,9 +4,9 @@
 <form
   action=""
   method="post"
-  class="p-5 mt-5 w-50 bg-dark"
+  class="p-5 mt-5 w-100 bg-dark"
   style="
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
   "
 >
 
@@ -79,9 +79,6 @@
   </p>
 </form>
 
-<div style="opacity: 0;" class="d-none">
-    <img class="w-50" src="{{ url_for('static', filename='images/globe.png') }}" alt="">
-</div>
-<img class="login-img w-50.d-none.d-lg-block" src="{{ url_for('static', filename='images/login.svg') }}" alt="login">
+<img class="login-img w-50.d-none.d-lg-block px-5" src="{{ url_for('static', filename='images/login.svg') }}" alt="login">
 </div>
 {% endblock content %}
