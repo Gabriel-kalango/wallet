@@ -112,7 +112,22 @@ span.navbar-toggler-ico.three {
     display:none;
 }
 
-
+.d-none{
+    display:none;
+}
+img.login-img.w-50\.d-none\.d-lg-block {
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.d-flex {
+    justify-content: center;
+    flex-direction: row;
+}
+.d-flex.login{
+    align-items: center;
+}
 
 @media (max-width:960px) {
     a.nav-link {
@@ -121,5 +136,8 @@ span.navbar-toggler-ico.three {
 
     li.nav-item._button {
         margin-top: 1rem;
+    }
+    img.login-img.w-50\.d-none\.d-lg-block {
+        display: none;
     }
 }
