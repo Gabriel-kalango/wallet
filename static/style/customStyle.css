@@ -55,6 +55,12 @@ a.nav-link.nav-btn:hover::before{
 .hero-section{
     animation:1s hero ease-in;
 }
+a.mt-3.text-light.bg-success.px-4.fw-bold.py-2.text-decoration-none.rounded {
+    transition:0.3s ease-in-out;
+}
+a.mt-3.text-light.bg-success.px-4.fw-bold.py-2.text-decoration-none.rounded:hover {
+    box-shadow: 0px 1px 5px 3px #ffc107;
+}
     @keyframes hero {
         from{
             transform:translateY(20%);
