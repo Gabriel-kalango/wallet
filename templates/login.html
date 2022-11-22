@@ -79,16 +79,9 @@
   </p>
 </form>
 
-<div style="opacity: 0;" class="d-none d-lg-block">
+<div style="opacity: 0;" class="d-none">
     <img class="w-50" src="{{ url_for('static', filename='images/globe.png') }}" alt="">
 </div>
-<img class="w-50 d-none d-lg-block" src="{{ url_for('static', filename='images/globe.png') }}" alt=""
-style="position: fixed;
-right: 0;
-z-index: -1;
-margin-right: 5rem;
-filter: opacity(60%);
-"
->
+<img class="login-img w-50.d-none.d-lg-block" src="{{ url_for('static', filename='images/login.svg') }}" alt="login">
 </div>
 {% endblock content %}
