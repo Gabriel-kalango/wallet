@@ -89,6 +89,29 @@ def home():
 @login_required
 def pay():
     form = SendMoneyForm()
+    if request.method == 'POST':
+        account_number = form.account_number.data
+        amount = form.amount.data
+        user1 = User.query.filter_by(account_number=account_number).first()
+        if not user1:
+            flash('Invalid account number', 'danger')
+            return redirect(url_for('pay'))
+        if current_user.account_balance < amount:
+            flash('Insufficient Funds', 'danger')
+            return redirect(url_for('pay'))
+        user1.account_balance += amount
+        db.session.commit()
+        transact1 = Transaction(transaction_type='CRT', transaction_amount=amount, sender=current_user.username, user_id=user1.id)
+        db.session.add(transact1)
+        db.session.commit()
+
+        current_user.account_balance -= amount
+        db.session.commit()
+        transact2 = Transaction(transaction_type='DBT', transaction_amount=amount, sender=user1.username, user_id=current_user.id)
+        db.session.add(transact2)
+        db.session.commit()
+        flash(f'{amount} Naira has been sent to {user1.username}', 'success')
+        return redirect(url_for('pay'))
     return render_template('pay.html', date=datetime.utcnow(), form=form)
 
 
@@ -186,6 +209,12 @@ def logout():
     logout_user()
     flash('You\'ve been logged out successfully', 'success')
     return redirect(url_for('front_page'))
+
+
+@app.route('/send')
+@login_required
+def send_money():
+    pass
 
 
 if __name__ == '__main__':

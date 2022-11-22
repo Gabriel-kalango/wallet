@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, IntegerField, TelField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.validators import DataRequired, Length, Email, EqualTo, NumberRange
 
 
 class LoginForm(FlaskForm):
@@ -10,9 +10,8 @@ class LoginForm(FlaskForm):
 
 
 class SendMoneyForm(FlaskForm):
-    username = StringField('Wallet Username', validators=[DataRequired(), Length(min=2)])
-    amount = IntegerField('Amount', validators=[DataRequired()])
-    description = StringField('Description', validators=[DataRequired(), Length(min=2)])
+    account_number = IntegerField('Wallet Account Number', validators=[DataRequired()])
+    amount = IntegerField('Amount', validators=[DataRequired(), NumberRange(min=100)])
     submit = SubmitField('Send')
 
 

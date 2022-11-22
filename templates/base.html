@@ -113,7 +113,7 @@
 
             </ul>
             <!-- drop down -->
-            <div class="dropdown mr-auto mt-3">
+            <div class="dropdown mr-auto mt-3" style="margin-left: 1rem;">
               <button class="text-white" style="border: none; background: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
               >
                <i class="fas fa-user-circle h3"></i>
@@ -148,9 +148,7 @@
           data-bs-toggle="collapse"
           data-bs-target="#navmenu"
         >
-          <span class="navbar-toggler-ico one"></span>
-          <span class="navbar-toggler-ico two"></span>
-          <span class="navbar-toggler-ico three"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navmenu">
@@ -167,7 +165,7 @@
             <li class="nav-item _box">
               <a href="#" class="nav-link">Help</a>
             </li>
-            <li class="nav-item _button">
+            <li class="nav-item">
               <a href="{{ url_for('login') }}" class="nav-link nav-btn"><span>Sign In</span></a>
             </li>
           </ul>

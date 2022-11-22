@@ -54,16 +54,16 @@
       {{ form.hidden_tag() }}
 
       <!-- For Username validations -->
-      {{ form.username.label(class='label text-muted fw-bold mt-4 lead mb-2') }}
-      {% if form.username.errors %} {{ form.username(class="form-control p-2",
-      required=False, placeholder="Enter username") }} {% for error in
-      form.username.errors %}
+      {{ form.account_number.label(class='label text-muted fw-bold mt-4 lead mb-2') }}
+      {% if form.account_number.errors %} {{ form.account_number(class="form-control p-2",
+      required=False, placeholder="Enter account Number") }} {% for error in
+      form.account_number.errors %}
       <small class="text-danger mt-1"
         ><i class="fa fas fa-exclamation-circle"></i>&nbsp;&nbsp;{{ error
         }}</small
       >
-      {% endfor %} {% else %} {{ form.username(class="form-control p-2",
-      required=False, placeholder="Enter username") }} {% endif %}
+      {% endfor %} {% else %} {{ form.account_number(class="form-control p-2",
+      required=False, placeholder="Enter account Number") }} {% endif %}
 
       <!-- For Amount validations -->
       {{ form.amount.label(class='label text-muted fw-bold mt-4 lead mb-2') }}

@@ -52,44 +52,6 @@ a.nav-link.nav-btn::before{
 a.nav-link.nav-btn:hover::before{
     width:100%
 }
-.navbar-toggler{
-    position: relative;
-}
-.navbar-toggler:focus {
-    outline: 0;
-    box-shadow: 0px 0px 0 0 !important;
-}
-button.navbar-toggler {
-    border: none;
-    outline:none !important;
-    padding:0.5rem 1rem;
-}
-.navbar-toggler-ico{
-    height: 2px;
-    width: 100%;
-    border-radius: 10px;
-    left: 0;
-    background: #fff;
-    content: " ";
-    position: absolute;
-    transition: 0.3s transform cubic-bezier(0.68, -0.55, 0.265, 1.55) , 0.3s ease-in-out display;
-}
-span.navbar-toggler-ico.one {
-    top: 0;
-}
-span.navbar-toggler-ico.three {
-    bottom: -10%;
-}
-
-.navbar-toggler:not(.collapsed)[aria-expanded="true"] span.navbar-toggler-ico.one {
-    transform: translateY(8px) rotate(135deg);
-}
-.navbar-toggler:not(.collapsed)[aria-expanded="true"] span.navbar-toggler-ico.two {
-    transform: rotate(45deg);
-}
-.navbar-toggler:not(.collapsed)[aria-expanded="true"] span.navbar-toggler-ico.three {
-    display:none;
-}
 .hero-section{
     animation:1s hero ease-in;
 }
@@ -109,13 +71,4 @@ span.navbar-toggler-ico.three {
 h1.text-warning.hero {
     font-size: 4.5rem;
     text-transform: capitalize;
-}
-@media (max-width:960px) {
-    a.nav-link {
-        text-align: center;
-    }
-
-    li.nav-item._button {
-        margin-top: 1rem;
-    }
 }

@@ -64,8 +64,45 @@
     </div>
     <hr style="border: 1px solid wheat;" class="mt-5">
     <div>
-        <p class="text-center lead fw-bold text-muted">Recent transaction histories</p>
+      <p class="text-center lead fw-bold text-muted">Recent transaction histories</p>
+      {% if not current_user.transacts %}
         <p class="text-center h4 text-warning mt-3">NO RECORDS</p>
-    </div>
+        {% else %}
+
+<!-- Table -->
+
+<table class="table">
+  <thead class="bg-dark">
+    <tr class="text-muted text-center">
+      <th scope="col">Type</th>
+      <th scope="col">Amount</th>
+      <th scope="col">User</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for transaction in current_user.transacts[::-1] %}
+    {% if transaction.transaction_type == 'CRT' %}
+    <tr class="bg-success text-center text-light">
+      <th scope="row">{{ transaction.transaction_type }}</th>
+      <td><del style="text-decoration-style: double;">N</del>{{ transaction.transaction_amount }}</td>
+      <td>@{{ transaction.sender.lower() }}</td>
+      <td>{{ transaction.date_posted.strftime('%Y-%m-%d') }}</td>
+    </tr>
+    {% else %}
+    <tr class="bg-danger text-center text-light">
+      <th scope="row">{{ transaction.transaction_type }}</th>
+      <td><del style="text-decoration-style: double;">N</del>{{ transaction.transaction_amount }}</td>
+      <td>@{{ transaction.sender.lower() }}</td>
+      <td>{{ transaction.date_posted.strftime('%Y-%m-%d') }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+      </tbody>
+</table>
+<!-- ..........End of table.............. -->
+{% endif %}
 </div>
+</div>
+
 {% endblock content %}
