@@ -31,16 +31,16 @@
         </p>
         <p class="text-white px-3">
             <small class="text-muted">Nigerian Naira</small><br>
-            <span class="h3">
+            <span class="h3 balance">
                 <del style="text-decoration-style: double;">N</del>
                 {{ balance }}</span>
         </p>
     </div>
     <div class="d-flex align-items-center mb-4 mt-2">
-        <div class="badge badge-pill text-white bg-success mx-1"><i class="px-2 py-1 fas fa-square"></i>Spend</div>
-        <div class="badge badge-pill text-white bg-success mx-1"><i class="px-2 py-1 fas fa-dice-d6"></i>Save</div>
+        <div class="badge badge-pill text-white bg-accent mx-1"><i class="px-2 py-1 fas fa-square"></i>Spend</div>
+        <div class="badge badge-pill text-white bg-accent mx-1"><i class="px-2 py-1 fas fa-dice-d6"></i>Save</div>
         <div class="dropdown mx-1">
-            <button class="badge badge-pill text-white bg-success" style="border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="badge badge-pill text-white bg-accent" style="border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <i class="py-1 fas fa-share"></i>&nbsp; Send Money
             </button>
             <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
@@ -52,7 +52,7 @@
 
           
     </div>
-    <div class="bg-dark p-3"
+    <div class="bg-mild p-3"
     style="background: url(../static/images/atm-white.png);
     background-size: 10rem;
     background-repeat: no-repeat;
@@ -72,7 +72,7 @@
 <!-- Table -->
 
 <table class="table">
-  <thead class="bg-dark">
+  <thead class="bg-mild">
     <tr class="text-muted text-center">
       <th scope="col">Type</th>
       <th scope="col">Amount</th>
@@ -83,7 +83,7 @@
   <tbody>
     {% for transaction in current_user.transacts[::-1] %}
     {% if transaction.transaction_type == 'CRT' %}
-    <tr class="bg-success text-center text-light">
+    <tr class="bg-accent text-center text-light">
       <th scope="row">{{ transaction.transaction_type }}</th>
       <td><del style="text-decoration-style: double;">N</del>{{ transaction.transaction_amount }}</td>
       <td>@{{ transaction.sender.lower() }}</td>
