@@ -213,8 +213,8 @@ def logout():
 
 @app.route('/send')
 @login_required
-def send_money():
-    pass
+def display_profile():
+    return render_template('display-profile.html', date=datetime.utcnow())
 
 
 if __name__ == '__main__':
