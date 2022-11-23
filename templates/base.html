@@ -65,11 +65,11 @@
       href="{{ url_for('static', filename='images/logo-normal.png') }}"
     />
   </head>
-  <body style="background: rgb(46, 45, 45)">
+  <body>
     {% if current_user.is_authenticated %}
 
     <!-- Navbar -->
-    <nav class="d-flex align-items-center navbar navbar-expand-lg navbar-dark bg-dark py-3" id="navbar">
+    <nav class="d-flex align-items-center navbar navbar-expand-lg nav-bar py-3" id="navbar">
       <div class="container">
         <a href="{{ url_for('home') }}" class="navbar-brand">
           <img
@@ -185,7 +185,7 @@
     {% if current_user.is_authenticated %}
     <!-- The footer to see if the user is logged in -->
     <footer>
-      <p class="text-white text-center">FOOTER FOR LOGGED IN USERS</p>
+      <p class="text-dark text-center"></p>
     </footer>
     {% else %}
     <!-- The footer to see if the user is not yet logged in -->
@@ -195,20 +195,20 @@
         <div class="w-100 py-3">
           <img
             class=""
-            src="{{ url_for('static', filename='images/logo-white.png') }}"
+            src="{{ url_for('static', filename='images/logo-normal.png') }}"
             alt=""
             style="width: 4rem; margin-left: 2rem"
           />
         </div>
         <div class="d-flex flex-row w-100">
-          <ul class="w-100 text-light" style="list-style: none">
+          <ul class="w-100 text-dark" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
           </ul>
-          <ul class="w-100 text-light" style="list-style: none">
+          <ul class="w-100 text-dark" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
@@ -218,7 +218,7 @@
         </div>
 
         <div class="d-flex flex-row w-100">
-          <ul class="w-100 text-light" style="list-style: none">
+          <ul class="w-100 text-dark" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
@@ -226,7 +226,7 @@
             <li class="p-2">lorem</li>
           </ul>
 
-          <ul class="w-100 text-light" style="list-style: none">
+          <ul class="w-100 text-dark" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
@@ -236,7 +236,7 @@
         </div>
       </footer>
       {% endif %}
-      <p class="text-light mt-3" style="margin-left: 3rem">
+      <p class="footer-text mt-3">
         EasyTransact | copyright &copy; {{ date.year }}
       </p>
     </section>
