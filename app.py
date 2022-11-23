@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import *
 from form import *
+from flask_mail import Message, Mail
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, current_user, logout_user, login_required, UserMixin, LoginManager
@@ -14,6 +15,13 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + os.path.join(base_dir, 'wallet.db')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = '4f557e8e5eb51bfb7c42'
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'atmme1992@gmail.com'
+app.config['MAIL_PASSWORD'] = 'dvogogdoinarpugn'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
 
 db = SQLAlchemy(app)
@@ -70,6 +78,8 @@ def unauthorized_handler():
 
 @app.route('/')
 def front_page():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     return render_template('front.html', date=datetime.utcnow())
 
 
@@ -211,10 +221,29 @@ def logout():
     return redirect(url_for('front_page'))
 
 
-@app.route('/send')
+@app.route('/send/')
 @login_required
 def display_profile():
     return render_template('display-profile.html', date=datetime.utcnow())
+
+
+@app.route('/contact/', methods=['GET', 'POST'])
+@login_required
+def contact():
+    form = ContactForm()
+    if request.method == "POST":
+        if not form.name.data and not form.email.data and not form.message.data:
+            flash('All fields are required', 'danger')
+            return redirect(url_for('contact'))
+        name = form.name.data.title()
+        email = form.email.data.lower()
+        message = form.message.data.title()
+        msg = Message('EasyTransact: from ' + name, sender=email, recipients=['atmme1992@gmail.com', 'greatsoma2019@gmail.com', 'vnoah410@gmail.com'])
+        msg.body = f'{message}\nMy email address is: {email}'
+        mail.send(msg)
+        flash('Message Sent', 'success')
+        return redirect(url_for('contact'))
+    return render_template('contact.html', form=form, date=datetime.utcnow())
 
 
 if __name__ == '__main__':
