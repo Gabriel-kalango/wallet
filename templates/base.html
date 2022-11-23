@@ -51,6 +51,13 @@
       href="{{ url_for('static', filename='css/style.css') }}"
     />
 
+    
+    <!-- The Jquery local libarary -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='javascript/jquery-3.6.1.min.js') }}"
+    ></script>
+
     <!-- Js -->
 
     <script
@@ -141,7 +148,7 @@
             src="{{ url_for('static', filename='images/logo-yellow.png') }}"
             alt="company's logo"
             style="width: 2.5rem"
-          /><span>&nbsp; EasyTransact</span>
+          /><span class="text-light">&nbsp; EasyTransact</span>
         </a>
 
         <button
@@ -158,19 +165,19 @@
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item _box">
-              <a href="#" class="nav-link">Features</a>
+              <a href="#" class="nav-link" style="color: white !important;">Features</a>
             </li>
             <li class="nav-item _box">
-              <a href="#about" class="nav-link">Business</a>
+              <a href="#about" class="nav-link" style="color: white !important;">Business</a>
             </li>
             <li class="nav-item _box">
-              <a href="#" class="nav-link">Company</a>
+              <a href="#" class="nav-link" style="color: white !important;">Company</a>
             </li>
             <li class="nav-item _box">
-              <a href="#" class="nav-link">Help</a>
+              <a href="#" class="nav-link" style="color: white !important;">Help</a>
             </li>
             <li class="nav-item _button">
-              <a href="{{ url_for('login') }}" class="nav-link nav-btn"><span>Sign In</span></a>
+              <a href="{{ url_for('login') }}" class="nav-link nav-btn" style="color: white !important;"><span>Sign In</span></a>
             </li>
           </ul>
         </div>
@@ -201,14 +208,14 @@
           />
         </div>
         <div class="d-flex flex-row w-100">
-          <ul class="w-100 text-dark" style="list-style: none">
+          <ul class="w-100 text-muted" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
           </ul>
-          <ul class="w-100 text-dark" style="list-style: none">
+          <ul class="w-100 text-muted" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
@@ -218,7 +225,7 @@
         </div>
 
         <div class="d-flex flex-row w-100">
-          <ul class="w-100 text-dark" style="list-style: none">
+          <ul class="w-100 text-muted" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
@@ -226,7 +233,7 @@
             <li class="p-2">lorem</li>
           </ul>
 
-          <ul class="w-100 text-dark" style="list-style: none">
+          <ul class="w-100 text-muted" style="list-style: none">
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
             <li class="p-2">lorem</li>
@@ -236,16 +243,19 @@
         </div>
       </footer>
       {% endif %}
-      <p class="footer-text mt-3">
+      <p class="footer-text mt-3 text-muted">
         EasyTransact | copyright &copy; {{ date.year }}
       </p>
     </section>
 
     <!-- Go to top button -->
     <a href="#" class="position-fixed p-4" style="bottom: 0; right: 0"
-      ><i class="far fa-arrow-alt-circle-up text-white h3"></i
+      ><i class="far fa-arrow-alt-circle-up text-muted h3"></i
     ></a>
     <!-- ............... -->
+
+        <!-- Icon for the dark mode -->
+        <i class="dntoggle fas fa-moon"></i>
 
     <!-- BOOTSTRAP -->
 

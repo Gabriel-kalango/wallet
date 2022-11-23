@@ -1,5 +1,6 @@
 :root{
     --accent-color:#675be8;
+    --white-color:#ffffff;
     --mild-bg:#ededed;
 }
 *{
@@ -8,7 +9,7 @@
     padding:0;
 }
 body{
-    background-color: #ffffff !IMPORTANT;
+    background: #ffffff;
     color:#343a40 !important;
 }
 .bg-accent {
@@ -42,12 +43,18 @@ body{
     background-color: #fff;
     box-shadow: 1px 3px 9px #d4d4d4;
 }
+
+#navbar2{
+    box-shadow: 1px 3px 9px #d4d4d4;
+}
+
 .nav-item a.nav-link {
     color: #343a40;
 }
 .text-accent{
     color:var(--accent-color) !important;
 }
+
 i.fas.fa-user-circle.h3 {
     color: #343a40;
 }
@@ -218,4 +225,38 @@ a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-i
     img.login-img.w-50\.d-none\.d-lg-block {
         display: none;
     }
+}
+
+/* dark mode  */
+.dntoggle{
+    font-size: 20px;
+    border-radius: 100px;
+    background-color: #111111;
+    padding: 10px;
+    color:#fcfcfc;
+    box-shadow: 1px 2px 6px rgba(0,0,0,.3);
+    cursor: pointer;
+    
+    position: fixed;
+    bottom:25px;
+    left: 20px;
+    z-index: 99;
+    border: 1px solid white;
+  /* 
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s; */
+  }
+
+  .fas.fa-moon:before{
+    padding:0 2px;
+  }
+  .fas.fa-sun{
+    background-color: #212121;
+    color:#ccc;
+  }
+
+  
+.night{
+    background: #151515;
 }
