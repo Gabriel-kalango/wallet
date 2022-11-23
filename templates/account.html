@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <div
-  class="mt-5 card bg-dark p-5 col-15 col-xs-10 col-sm-10 col-md-9"
+  class="mt-5 card bg-mild p-5 col-15 col-xs-10 col-sm-10 col-md-9"
   style="margin: auto"
 >
   <div class="d-flex align-items-center _profile">
@@ -15,13 +15,13 @@
       />
     </div>
     <div class="d-flex flex-column px-3">
-      <span class="text-light h4"
+      <span class="text-accent h4"
         >{{ current_user.last_name.title() + ' ' +
         current_user.first_name.title() }}</span
       >
       <p>
         <small class="text-muted">Account Number</small><br />
-        <span class="text-light h5">{{ current_user.account_number }}</span>
+        <span class="text-accent h5">{{ current_user.account_number }}</span>
       </p>
     </div>
   </div>
@@ -30,9 +30,9 @@
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href="{{ url_for('display_profile') }}"
-        class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
+        class="acc-box-item bg-profile-menu text-accent text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
-        <i class="fa-solid fa-user text-warning"></i>
+        <i class="fa-solid fa-user icon-fa"></i>
         <p>Profile</p>
       </a>
     </div>
@@ -40,9 +40,9 @@
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
-        class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
+        class="acc-box-item bg-profile-menu text-accent text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
-        <i class="far fa-sticky-note text-warning"></i>
+        <i class="far fa-sticky-note icon-fa"></i>
         <p>Statement Report</p>
       </a>
     </div>
@@ -50,9 +50,9 @@
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
-        class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
+        class="acc-box-item bg-profile-menu text-accent text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
-        <i class="fab fa-rocketchat text-warning"></i>
+        <i class="fab fa-rocketchat icon-fa"></i>
         <p>Chat with us</p>
       </a>
     </div>
@@ -60,9 +60,9 @@
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
-        class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
+        class="acc-box-item bg-profile-menu text-accent text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
-        <i class="fas fa-pen-square text-warning"></i>
+        <i class="fas fa-pen-square icon-fa"></i>
         <p>Legal</p>
       </a>
     </div>
@@ -70,9 +70,9 @@
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
-        class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
+        class="acc-box-item bg-profile-menu text-accent text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
-        <i class="far fa-question-circle text-warning"></i>
+        <i class="far fa-question-circle icon-fa"></i>
         <p>FAQ</p>
       </a>
     </div>
@@ -80,9 +80,9 @@
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
-        class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
+        class="acc-box-item bg-profile-menu text-accent text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
-        <i class="fab fa-osi text-warning"></i>
+        <i class="fab fa-osi icon-fa"></i>
         <p>Invite and earn</p>
       </a>
     </div>
@@ -90,9 +90,9 @@
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href="{{ url_for('contact') }}"
-        class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
+        class="acc-box-item bg-profile-menu text-accent text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
-        <i class="fas fa-phone-square text-warning"></i>
+        <i class="fas fa-phone-square icon-fa"></i>
         <p>Contact us</p>
       </a>
     </div>
