@@ -134,25 +134,27 @@ img.login-img.w-50\.d-none\.d-lg-block {
 .d-flex.login{
     align-items: center;
 }
-.grid-container{
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-.acc-box{
-
-    margin: 1rem 0;
-}
-.acc-box-item{
-    display: flex;
+.d-flex.align-items-center {
     flex-direction: column;
 }
+.d-flex.flex-column.px-3 {
+    align-items: center;
+}
+.acc-con{
+    margin: 1rem 0;
+}
+a.acc-box-item.bg-secondary.text-light.text-decoration-none.py-1.px-3.lead.d-flex.align-items-center.justify-content-between i {
+    font-size: 3rem;
+}
 a.bg-secondary.text-light.text-decoration-none.py-1.px-3.lead.d-flex.align-items-center.justify-content-between {
-    width: 15rem;
-    height: 10rem;
+    margin: 1rem auto;
+    height: 12rem;
+    width: 80%;
+    border-radius: 2rem;
     padding: 2rem !important;
     align-items: center !important;
     justify-content: space-between !important;
+    flex-direction: column;
 }
 @media (max-width:960px) {
     a.nav-link {
