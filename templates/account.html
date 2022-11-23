@@ -10,7 +10,8 @@
         src="{{ url_for('static', filename='images/user.png') }}"
         class=""
         style="width: 8rem"
-        alt=""
+        alt="{{ current_user.last_name.title() + ' ' +
+        current_user.first_name.title() }} image"
       />
     </div>
     <div class="d-flex flex-column px-3">
@@ -26,7 +27,7 @@
   </div>
   <div class="container acc-con">
   <div class="acc-row row ">
-    <div class="col-lg-6 col-sm-12 acc-col ">
+    <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
@@ -36,7 +37,7 @@
       </a>
     </div>
 
-    <div class="col-lg-6 col-sm-12 acc-col ">
+    <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
@@ -46,7 +47,7 @@
       </a>
     </div>
 
-    <div class="col-lg-6 col-sm-12 acc-col ">
+    <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
@@ -56,7 +57,7 @@
       </a>
     </div>
 
-    <div class="col-lg-6 col-sm-12 acc-col ">
+    <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
@@ -66,7 +67,7 @@
       </a>
     </div>
 
-    <div class="col-lg-6 col-sm-12 acc-col ">
+    <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
@@ -76,7 +77,7 @@
       </a>
     </div>
 
-    <div class="col-lg-6 col-sm-12 acc-col ">
+    <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
@@ -86,7 +87,7 @@
       </a>
     </div>
 
-    <div class="col-lg-6 col-sm-12 acc-col ">
+    <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
         href=""
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
