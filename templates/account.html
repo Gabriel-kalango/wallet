@@ -4,7 +4,7 @@
   class="mt-5 card bg-dark p-5 col-15 col-xs-10 col-sm-10 col-md-9"
   style="margin: auto"
 >
-  <div class="d-flex align-items-center">
+  <div class="d-flex align-items-center _profile">
     <div class="d-flex flex-column">
       <img
         src="{{ url_for('static', filename='images/user.png') }}"
@@ -29,7 +29,7 @@
   <div class="acc-row row ">
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
-        href=""
+        href="{{ url_for('display_profile') }}"
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
         <i class="fa-solid fa-user text-warning"></i>
@@ -89,7 +89,7 @@
 
     <div class="col-lg-4 col-md-6 col-sm-12 acc-col ">
       <a
-        href=""
+        href="{{ url_for('contact') }}"
         class="acc-box-item bg-secondary text-light text-decoration-none py-1 px-3 lead d-flex align-items-center justify-content-between"
       >
         <i class="fas fa-phone-square text-warning"></i>
