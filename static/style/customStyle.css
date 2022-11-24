@@ -213,7 +213,13 @@ a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-i
     align-items: center !important;
     justify-content: space-between !important;
     flex-direction: column;
+    box-shadow:1px 3px 5px #858484;
+    transition:0.3s ease-in-out;
 }
+a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-items-center.justify-content-between:hover {
+    box-shadow:1px 3px 5px #675be8;
+}
+
 a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-items-center.justify-content-between p{
     text-align: center;
 }
