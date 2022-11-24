@@ -24,6 +24,15 @@ body{
 .h3.balance{
     color: #675be8 !important;
 }
+.navbar-brand span {
+    font-weight: 800;
+    margin-left: 0.5rem;
+    color: #4ca445;
+}
+.navbar-brand span span{
+    color:#333;
+    margin:0;
+}
 .nav-item a.nav-link {
     color: var(--accent-color) !important;
     transition: 0.3s ease-in-out;
@@ -54,9 +63,14 @@ body{
 .text-accent{
     color:var(--accent-color) !important;
 }
-
+button#dropdownMenuButton {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
 i.fas.fa-user-circle.h3 {
     color: #343a40;
+    margin: 0  0.5rem;
 }
 li.nav-item {
     margin: 0 0.5rem;
@@ -268,5 +282,5 @@ a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-i
 
   
 .night{
-    background: #151515;
+    background: #151515 !important;
 }
