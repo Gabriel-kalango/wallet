@@ -80,10 +80,10 @@
       <div class="container">
         <a href="{{ url_for('home') }}" class="navbar-brand">
           <img
-            src="{{ url_for('static', filename='images/logo-yellow.png') }}"
+            src="{{ url_for('static', filename='images/logo-normal.png') }}"
             alt="company's logo"
             style="width: 2.5rem"
-          /><span>&nbsp; EasyTransact</span>
+          /><span>&nbsp;Easy<span>Transact</span></span>
         </a>
 
         <button
@@ -122,7 +122,7 @@
 
             </ul>
             <!-- drop down -->
-            <div class="dropdown mr-auto mt-3" style="margin-left: 1rem;">
+            <div class="dropdown">
               <button class="text-accent" style="border: none; background: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
               >
                <i class="fas fa-user-circle h3"></i> {{ current_user.last_name.title() + ' ' + current_user.first_name.title() }}
