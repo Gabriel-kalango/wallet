@@ -214,6 +214,10 @@ a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-i
     justify-content: space-between !important;
     flex-direction: column;
 }
+a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-items-center.justify-content-between p{
+    text-align: center;
+}
+
 @media (max-width:960px) {
     a.nav-link {
         text-align: center;
