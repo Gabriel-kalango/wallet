@@ -111,9 +111,16 @@
 const darkBtn = document.querySelector('.dntoggle');
 const bodyEl = document.querySelector('body');
 const navbar = document.querySelector('#navbar')
+const navlink = document.querySelectorAll('#navlinks')
+const usericon = document.querySelector('#usericon')
 const darkMode = () => {
     bodyEl.classList.toggle('night');
-    navbar.classList.toggle('night')
+    navbar.classList.toggle('night');
+    usericon.classList.toggle('light');
+    for(nav of navlink){
+        nav.classList.toggle('light')
+    }
+
 }
 
 darkBtn.addEventListener('click', () => {

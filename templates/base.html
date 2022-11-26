@@ -83,7 +83,7 @@
             src="{{ url_for('static', filename='images/logo-normal.png') }}"
             alt="company's logo"
             style="width: 2.5rem"
-          /><span>&nbsp;Easy<span>Transact</span></span>
+          /><span>&nbsp;Easy<span class="text-muted">Transact</span></span>
         </a>
 
         <button
@@ -92,30 +92,31 @@
           data-bs-toggle="collapse"
           data-bs-target="#navmenu"
         >
-        <span class="navbar-toggler-ico one"></span>
-        <span class="navbar-toggler-ico two"></span>
-        <span class="navbar-toggler-ico three"></span>
+        <span class="navbar-toggler-ico one" style="background: rgb(105, 104, 104);"
+        ></span>
+        <span class="navbar-toggler-ico two" style="background: rgb(105, 104, 104);"></span>
+        <span class="navbar-toggler-ico three" style="background: rgb(105, 104, 104);"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav m-auto">
             <li class="nav-item">
-              <a href="{{ url_for('home') }}" class="nav-link">
+              <a href="{{ url_for('home') }}" class="nav-link nnnnn" id="navlinks">
                 <i class="fas fa-home d-none d-lg-inline"></i>
                 Home</a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
+            <li class="nav-item"">
+              <a href="#" class="nav-link" id="navlinks">
                 <i class="far fa-money-bill-alt d-none d-lg-inline" style="margin-left: 2rem;"></i>
                 Pay</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link" id="navlinks">
                 <i class="far fa-credit-card d-none d-lg-inline" style="margin-left: 2rem;"></i>
                 Card</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link" id="navlinks">
                 <i class="fas fa-business-time d-none d-lg-inline" style="margin-left: 2rem;"></i>
                 Invest</a>
             </li>
@@ -125,14 +126,17 @@
             <div class="dropdown">
               <button class="text-accent" style="border: none; background: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
               >
-               <i class="fas fa-user-circle h3"></i> {{ current_user.last_name.title() + ' ' + current_user.first_name.title() }}
-              </button>
-              <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="{{ url_for('account') }}">Profile</a>
-                <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="#">Account</a>
-                <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="{{ url_for('logout') }}">Logout</a>
+              <div class="d-flex align-items-center">
+                 <i class="fas fa-user-circle h3" id="usericon"></i> {{ current_user.last_name.title() + ' ' + current_user.first_name.title() }}
+                </div>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="{{ url_for('account') }}">Profile</a>
+                  <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="#">Account</a>
+                  <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="{{ url_for('logout') }}">Logout</a>
+                </div>
               </div>
-            </div>
+  
             <!-- ................... -->
         </div>
       </div>

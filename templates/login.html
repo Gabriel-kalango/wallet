@@ -4,9 +4,10 @@
 <form
   action=""
   method="post"
-  class="p-5 mt-5 w-100 bg-dark"
+  class="p-5 mt-5 w-100 bg-"
   style="
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background: rgba(116, 111, 111, 0.212); 
   "
 >
 
@@ -39,26 +40,27 @@
 
   
   <!-- For Emails validations -->
-  {{ form.email.label(class='label text-muted fw-bold mt-4 lead mb-2') }}
+  <div>{{ form.email.label(class='label text-muted fw-bold mt-4 lead mb-2') }}
   {% if form.email.errors %} {{ form.email(class="form-control p-2",
   required=False, placeholder="Enter email") }} {% for error in
   form.email.errors %}
   <small class="text-danger mt-1"><i class="fa fas fa-exclamation-circle"></i>&nbsp;&nbsp;{{ error }}</small>
   {% endfor %} {% else %} {{ form.email(class="form-control p-2",
-  required=False, placeholder="Enter email") }} {% endif %}
+  required=False, placeholder="Enter email") }} {% endif %}</div>
+  
   <!-- For password validations -->
-  {{ form.password.label(class='label text-muted fw-bold mt-4 lead mb-2') }}
+  <div>{{ form.password.label(class='label text-muted fw-bold mt-4 lead mb-2') }}
   {% if form.password.errors %} {{ form.password(class="form-control p-2
   lead", required=False, placeholder='Enter password') }} {% for error in
   form.password.errors %}
   <small class="text-danger mt-1"><i class="fa fas fa-exclamation-circle"></i>&nbsp;&nbsp;{{ error }}</small>
   {% endfor %} {% else %} {{ form.password(class="form-control p-2 lead",
-  required=False, placeholder='Enter password') }} {% endif %}
+  required=False, placeholder='Enter password') }} {% endif %}</div>
 
   <p style="color: black; margin-top: 1rem" class="text-muted">
     Forgot Password?
     <a
-      class="text-warning"
+      class="text-success"
       style="text-decoration: none; font-weight: 500"
       href=""
       >Reset it</a
@@ -71,7 +73,7 @@
   <p style="color: black; margin-top: 1rem" class="text-muted  small">
     If you don't have an account, you can register
     <a
-      class="text-warning"
+      class="text-success"
       style="text-decoration: none; font-weight: 700"
       href="{{ url_for('register') }}"
       >here</a

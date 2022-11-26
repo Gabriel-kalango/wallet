@@ -43,7 +43,7 @@
             <button class="badge badge-pill text-white bg-accent" style="border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <i class="py-1 fas fa-share"></i>&nbsp; Send Money
             </button>
-            <div class="dropdown-menu bg-warning" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="{{ url_for('pay') }}">Send to wallet</a>
               <a class="dropdown-item text-decoration-none text-dark fw-bold small" href="#">Send to bank</a>
             </div>
@@ -62,7 +62,7 @@
         <p class="text-muted">Your NGN account is all set <br>
         Your account number is <span class="fw-bold text-success">{{ user.account_number }}</span></p>
     </div>
-    <hr style="border: 1px solid wheat;" class="mt-5">
+    <hr style="border: 1px solid rgb(112, 112, 110);" class="mt-5">
     <div>
       <p class="text-center lead fw-bold text-muted">Recent transaction histories</p>
       {% if not current_user.transacts %}

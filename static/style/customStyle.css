@@ -1,5 +1,5 @@
 :root{
-    --accent-color:#675be8;
+    --accent-color:#7d74e6;
     --white-color:#ffffff;
     --mild-bg:#ededed;
 }
@@ -33,10 +33,17 @@ body{
     color:#333;
     margin:0;
 }
-.nav-item a.nav-link {
+/* .nav-item a.nav-link {
     color: var(--accent-color) !important;
     transition: 0.3s ease-in-out;
+} */
+
+
+#navlinks {
+    color: var(--accent-color);
+    transition: 0.3s ease-in-out;
 }
+
 .nav-item a.nav-link:hover{
     border-bottom:1px solid var(--accent-color);
 }
@@ -50,7 +57,7 @@ body{
 .nav-bar{
     position:fixed;
     background-color: #fff;
-    box-shadow: 1px 3px 9px #d4d4d4;
+    box-shadow: 1px 3px 9px #3837375d;
 }
 
 #navbar2{
@@ -272,15 +279,14 @@ a.bg-profile-menu.text-accent.text-decoration-none.py-1.px-3.lead.d-flex.align-i
     transition: all 0.2s; */
   }
 
-  .fas.fa-moon:before{
-    padding:0 2px;
-  }
-  .fas.fa-sun{
-    background-color: #212121;
-    color:#ccc;
-  }
-
   
 .night{
     background: #151515 !important;
+}
+
+
+/* change nav links color when signed in and dark mode */
+
+.light{
+    color: #b6b1f1 !important;
 }
