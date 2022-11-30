@@ -194,7 +194,7 @@ Project Link: [My Blog Project](https://github.com/engrmarkk/Wallet_Platform)
 This project was made possible by:
 
 - [AltSchool Africa School of Engineering](https://altschoolafrica.com/schools/engineering)
-- [B Lovedth](https://github.com/B-lovedth)
+- [Solomon Great](https://github.com/B-lovedth)
 - [Kuda UI](https://kuda.com)
 - [Othneil Drew's README Template](https://github.com/othneildrew/Best-README-Template)
 - [Ileriayo's Markdown Badges](https://github.com/Ileriayo/markdown-badges)
