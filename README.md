@@ -16,7 +16,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Twitter][twitter-shield]][twitter-url]
-[![Twitter][twitter-shield]][twitter-url2]
+[![Twitter][twitter-shield2]][twitter-url2]
 
 </div>
 
@@ -219,6 +219,7 @@ This project was made possible by:
 [license-shield]: https://img.shields.io/github/license/engrmarkk/Wallet_Platform.svg?style=for-the-badge
 [license-url]: https://github.com/engrmarkk/Wallet_Platform/blob/main/LICENSE.txt
 [twitter-shield]: https://img.shields.io/badge/-@iamengrmark-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/iamengrmark
+[twitter-shield2]: https://img.shields.io/badge/-@b_lovedth-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/b_lovedth
 [twitter-url]: https://twitter.com/iamengrmark
 [twitter-url2]: https://twitter.com/b_lovedth
 [Wallet_Platform-screenshot]: static/images/screen-light.png
