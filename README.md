@@ -16,6 +16,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Twitter][twitter-shield]][twitter-url]
+[![Twitter][twitter-shield]][twitter-url2]
 
 </div>
 
@@ -179,7 +180,8 @@ Python3: [Get Python](https://www.python.org/downloads/)
 
 ## Contact
 
-Adeniyi Olanrewaju - [@iamengrmark](https://twitter.com/iamengrmark) - adeniyiboladale@yahoo.com
+Adeniyi Olanrewaju - [@iamengrmark](https://twitter.com/iamengrmark) - adeniyiboladale@yahoo.com <br>
+Solomon Great - [@B_lovedth](https://twitter.com/b_lovedth) - greatsoma2019@gmail.com
 
 Project Link: [My Blog Project](https://github.com/engrmarkk/Wallet_Platform)
 
@@ -218,6 +220,7 @@ This project was made possible by:
 [license-url]: https://github.com/engrmarkk/Wallet_Platform/blob/main/LICENSE.txt
 [twitter-shield]: https://img.shields.io/badge/-@iamengrmark-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/iamengrmark
 [twitter-url]: https://twitter.com/iamengrmark
+[twitter-url2]: https://twitter.com/b_lovedth
 [Wallet_Platform-screenshot]: static/images/screen-light.png
 [Wallet_Platform-screenshot2]: static/images/screen-dark.png
 [python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
