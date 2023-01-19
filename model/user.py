@@ -1,6 +1,8 @@
 from db import db
+
+
 class User(db.Model):
-    __tablename__="user"
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
@@ -10,4 +12,4 @@ class User(db.Model):
     phone_number = db.Column(db.String(20), unique=True, nullable=False)
     account_number = db.Column(db.Integer, unique=True, nullable=False)
     account_balance = db.Column(db.Integer, default=20000)
-    transacts = db.relationship('Transaction', back_populates='users', lazy=True)
+    transacts = db.relationship("Transaction", back_populates="users", lazy=True)
