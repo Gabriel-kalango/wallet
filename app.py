@@ -1,18 +1,17 @@
 import os
-from flask import Flask, jsonify
-from flask_smorest import Api
-from flask_jwt_extended import JWTManager
+from flask import jsonify
 from resources.transaction import blb as transactionblueprint
 from resources.user import blb as Userblueprint
-from db import db
+from extensions import db, app, api, jwt, mail
+from flask_migrate import Migrate
+from datetime import timedelta
+from blocklist import BLOCKLIST
 
 # import model
-from flask_migrate import Migrate
 
 
 def create_app(db_url=None):
 
-    app = Flask(__name__)
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "WALLET REST API"
     app.config["API_VERSION"] = "v1"
@@ -27,10 +26,22 @@ def create_app(db_url=None):
     )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["JWT_SECRET_KEY"] = "442830361741531832645899122519391798179"
+
+    app.config["MAIL_SERVER"] = "smtp.gmail.com"
+    app.config["MAIL_PORT"] = 465
+    app.config["MAIL_USERNAME"] = "atmme1992@gmail.com"
+    app.config["MAIL_PASSWORD"] = "dvogogdoinarpugn"
+    app.config["MAIL_USE_TLS"] = False
+    app.config["MAIL_USE_SSL"] = True
+
     db.init_app(app)
     migrate = Migrate(app, db)
-    api = Api(app)
-    jwt = JWTManager(app)
+    api.init_app(app)
+    jwt.init_app(app)
+    mail.init_app(app)
+
+    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
+    app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=30)
 
     # @jwt.token_in_blocklist_loader
     # def check_if_token_in_blocklist(jwt_header, jwt_payload):
@@ -62,6 +73,12 @@ def create_app(db_url=None):
             ),
             401,
         )
+
+    # this is going to check the BLOCKLIST set if the token you're trying to use exist in the set
+    # if the token is present in the set, it will return a 'token revoked' message
+    @jwt.token_in_blocklist_loader
+    def check_if_token_in_blocklist(jwt_header, jwt_payload):
+        return jwt_payload["jti"] in BLOCKLIST
 
     @jwt.expired_token_loader
     def expired_token_callback(jwt_header, jwt_payload):
