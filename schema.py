@@ -58,7 +58,6 @@ class UserSchema(plainUserSchema):
 
 class UserLoginschema(Schema):
     username = fields.Str()
-    # email = fields.Str()
     password = fields.Str(required=True)
 
 
